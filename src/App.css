@@ -1,0 +1,101 @@
+#root {
+  
+  margin: 0 auto;
+
+
+}
+
+body{
+  background: white;
+}
+
+.container-fluid-login {
+
+  background-color: rgba(0, 0, 0, 0.1); /* White with transparency */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: 1px solid rgba(138, 138, 138, 0.3); /* Light border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 2rem;  
+
+
+  max-width: 500px;
+  height: 26rem;
+  display: flex;
+
+  flex-direction: column; 
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+button.btn-login{
+  transition: 0.3s;
+  background-color: #2aea7d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-login:hover{
+    background-color: #09fa19;
+    color: rgb(255, 255, 255);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.1);
+  }
+
+.response{
+  color: #09fa19;
+  margin-top: 15px;
+  }
+
+nav.navbar{
+  width: 100% !important;
+  padding: 15px !important;
+}
+
+.padding-auto{
+  padding: 2rem !important;
+}
+
+.margin-auto{
+  margin: 2rem !important;
+}
+
+.btn-reg{
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: rgb(0, 102, 255);
+}
+
+.produtos-div{
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  margin: 10px;
+  
+}
+
+.produtos{
+  padding: 1rem;
+  
+  display: flex;
+  flex-direction: column;
+
+
+  height: 25rem;
+  max-width: 400px;
+  justify-content: space-around !important;
+  text-align: left;
+  gap: 20px;
+}
+
+.card-img-top{
+  display: flex;
+  margin: 0 auto;
+  margin-top: 20px;
+  max-width: 12rem;
+  max-height: 12rem;
+}
