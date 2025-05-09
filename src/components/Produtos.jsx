@@ -1,11 +1,16 @@
 import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
+import Produto from "./Produto.jsx";
+import Contato from "./Contato.jsx";
+
 let prod = {};
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+
 function Produtos() {
   const [produtos, setProdutos] = useState(null);
 
   const getProdutos = async () => {
-    console.log(1231123);
     try {
       const response = await fetch("http://localhost:3000/produtos");
       const data = await response.json();
@@ -31,9 +36,12 @@ function Produtos() {
             <div class="body-card">
               <h5 class="card-title">{produto.nome}</h5>
               <p class="card-text">{produto.preco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-              <a href="#" class="btn btn-success">
-                Comprar
-              </a>
+         
+              
+                <Link onClick={() => {localStorage.setItem('produto', produto.id)}} className=" " to="/produtos/produto">
+                  Comprar
+                </Link>
+
             </div>
           </div>
         ))}

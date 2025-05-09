@@ -25,7 +25,8 @@ function Login() {
         });
         const data = await res.json(); // Converte a resposta para JSON
         setResponse(data.message);
-        setResponseID(data.user.id) // Armazena a resposta no estado
+        setResponseID(data.user.id) 
+        localStorage.setItem("userID", data.user.id)// Armazena a resposta no estado
         console.log(data);
       } catch (error) {
         console.error("Error:", error);

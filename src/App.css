@@ -99,3 +99,14 @@ nav.navbar{
   max-width: 12rem;
   max-height: 12rem;
 }
+
+.img-selected{
+  width: 300px;
+}
+
+.display-product{
+  display: flex;
+
+  flex-direction: column;
+  padding: 1rem;
+}

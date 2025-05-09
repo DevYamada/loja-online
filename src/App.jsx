@@ -3,6 +3,8 @@ import Login from "./components/Login.jsx";
 import Home from "./components/Home.jsx";
 import Contato from "./components/Contato.jsx";
 import Produtos from "./components/Produtos.jsx";
+import Produto from "./components/Produto.jsx";
+import Carrinho from "./components/Carrinho.jsx";
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
@@ -12,7 +14,7 @@ function App() {
       <BrowserRouter>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="/">
               Commerce
             </a>
             <button
@@ -40,7 +42,11 @@ function App() {
                 <Link className="nav-link" to="/contato">
                   Contato
                 </Link>
+
               </div>
+              <Link className="navbar-text" to="/carrinho">
+                Carrinho
+            </Link>
             </div>
           </div>
         </nav>
@@ -49,7 +55,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/produtos" element={<Produtos />} />
+          <Route path="/produtos/produto" element={<Produto />} />
           <Route path="/contato" element={<Contato />} />
+          <Route path="/carrinho" element={<Carrinho />} />
         </Routes>
       </BrowserRouter>
     </>
