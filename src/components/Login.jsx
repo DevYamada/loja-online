@@ -25,9 +25,15 @@ function Login() {
         });
         const data = await res.json(); // Converte a resposta para JSON
         setResponse(data.message);
-        setResponseID(data.user.id) 
-        localStorage.setItem("userID", data.user.id)// Armazena a resposta no estado
-        console.log(data);
+        setResponseID(data.user.id);
+        localStorage.setItem("userID", data.user.id);
+        localStorage.setItem("user", data.user.username); // Armazena a resposta no estado
+        if (!data.user.id) {
+          return;
+        }
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -65,6 +71,9 @@ function Login() {
   return (
     <div className="container-fluid-login padding-auto">
       {regist == 0 ? <h1>Login</h1> : <h1>Registrar</h1>}
+      {localStorage.getItem("user") && (
+        <>Você já está logado como {localStorage.getItem("user")}</>
+      )}
       <form onSubmit={submit}>
         <div className="mb-3">
           <label htmlFor="username" className="form-label">
@@ -112,7 +121,8 @@ function Login() {
       {regist == 0 ? (
         <div>
           Não tem uma conta?{" "}
-          <button className="btn-reg"
+          <button
+            className="btn-reg"
             onClick={() => {
               setRegist(1);
             }}
@@ -123,7 +133,8 @@ function Login() {
       ) : (
         <div>
           Já tem uma conta?{" "}
-          <button className="btn-reg"
+          <button
+            className="btn-reg"
             onClick={() => {
               setRegist(0);
             }}

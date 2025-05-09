@@ -46,7 +46,10 @@ function App() {
               </div>
               <Link className="navbar-text" to="/carrinho">
                 Carrinho
-            </Link>
+              </Link>
+              <Link className="navbar-text" to="/carrinho">
+                Logado como: {localStorage.getItem("user")}
+              </Link>
             </div>
           </div>
         </nav>
