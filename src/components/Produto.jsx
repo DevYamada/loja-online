@@ -6,7 +6,7 @@ function Produto() {
 
   const getProduto = async () => {
     try {
-      const response = await fetch("http://localhost:3000/produtos");
+      const response = await fetch("https://loja-online-back-6j5q.onrender.com/produtos");
       const data = await response.json();
 
       for (let item = 0; item<=data.length; item++){

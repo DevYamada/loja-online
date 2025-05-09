@@ -16,7 +16,7 @@ function Login() {
     console.log("123");
     if (regist == 0) {
       try {
-        const res = await fetch("http://localhost:3000/login", {
+        const res = await fetch("https://loja-online-back-6j5q.onrender.com/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -38,7 +38,7 @@ function Login() {
         console.error("Error:", error);
       }
     } else {
-      const res = await fetch("http://localhost:3000/register", {
+      const res = await fetch("https://loja-online-back-6j5q.onrender.com/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

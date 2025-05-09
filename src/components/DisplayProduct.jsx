@@ -2,7 +2,7 @@ function DisplayProduct({ product }) {
   const submit = async () => {
     console.log("submit");
     try {
-      const response = await fetch("http://localhost:3000/produtos/produto", {
+      const response = await fetch("https://loja-online-back-6j5q.onrender.com/produtos/produto", {
         method: "POST",
         headers: { "content-Type": "application/json" },
         body: JSON.stringify({ id: product.id, userID: localStorage.getItem("userID") }),

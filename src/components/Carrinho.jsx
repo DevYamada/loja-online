@@ -7,7 +7,7 @@ function Carrinho() {
 
   const getCart = async () => {
     const response = await fetch(
-      `http://localhost:3000/carrinho/${localStorage.getItem("userID")}`
+      `https://loja-online-back-6j5q.onrender.com/carrinho/${localStorage.getItem("userID")}`
     );
     const data = await response.json();
 
