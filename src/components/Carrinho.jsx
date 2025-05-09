@@ -1,9 +1,9 @@
-import { div, h2 } from "framer-motion/client";
+
 import { useEffect, useState } from "react";
 
 function Carrinho() {
   const [cart, setCart] = useState(null);
-  const [cartP, setCartP] = useState(null);
+
 
   const getCart = async () => {
     const response = await fetch(
@@ -14,7 +14,7 @@ function Carrinho() {
     setCart(data);
   };
 
-  const getProducts = async () => {
+ /* const getProducts = async () => {
     const response = await fetch("http://localhost:3000/produtos", {
       method: "POST",
       headers: { "content-Type": "application/json" },
@@ -23,7 +23,7 @@ function Carrinho() {
     const data = await response.json();
     setCartP(data);
     console.log(cartP);
-  };
+  };*/
 
   useEffect(() => {
     getCart();

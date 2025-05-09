@@ -1,11 +1,11 @@
-import { h1 } from "framer-motion/client";
-import { useState, useEffect } from "react";
+
+import { useState } from "react";
 
 function Login() {
   const [username, setUsername] = useState("u");
   const [password, setPassword] = useState("p");
   const [response, setResponse] = useState(null);
-  const [responseID, setResponseID] = useState(null);
+
 
   const [regist, setRegist] = useState(0);
 
@@ -25,7 +25,7 @@ function Login() {
         });
         const data = await res.json(); // Converte a resposta para JSON
         setResponse(data.message);
-        setResponseID(data.user.id);
+
         localStorage.setItem("userID", data.user.id);
         localStorage.setItem("user", data.user.username); // Armazena a resposta no estado
         if (!data.user.id) {

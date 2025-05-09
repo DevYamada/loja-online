@@ -1,9 +1,9 @@
-import { div } from "framer-motion/client";
+
 import { useEffect, useState } from "react";
 import Produto from "./Produto.jsx";
 import Contato from "./Contato.jsx";
 
-let prod = {};
+
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 
@@ -15,7 +15,7 @@ function Produtos() {
       const response = await fetch("http://localhost:3000/produtos");
       const data = await response.json();
       console.log(data);
-      prod = data;
+
       setProdutos(data); // Armazena a resposta no estado
     } catch (error) {
       console.error("Error fetching data:", error);
